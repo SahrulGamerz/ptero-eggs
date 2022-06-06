@@ -1,20 +1,20 @@
 #!/bin/ash
 git clone https://github.com/SahrulGamerz/ptero-eggs.git ./temp
-if [[ -f "./nginx" ]]
+if [[ -d "./nginx" ]]
 then
     echo "File exists not cloning files"
 else
     echo "Cloning nginx folder"
     cp -r ./temp/nginx ./
 fi
-if [[ -f "./php-fpm" ]]
+if [[ -d "./php-fpm" ]]
 then
     echo "File exists not cloning files"
 else
     echo "Cloning php-fpm folder"
     cp -r ./temp/php-fpm ./
 fi
-if [[ -f "./webroot" ]]
+if [[ -d "./webroot" ]]
 then
     echo "File exists not cloning files"
 else
