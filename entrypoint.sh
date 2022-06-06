@@ -43,7 +43,7 @@ else
     echo "Starting Nginx..."
     echo "=!=!=!== Please ignore the error about no permissions to the log file. ==!=!=!="
     nginx -c /home/container/nginx/nginx.conf
-    '
+    ' > start.sh
 fi
 
 # Replace Startup Variables
