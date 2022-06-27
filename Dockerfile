@@ -14,12 +14,15 @@ RUN php composer-setup.php
 RUN php -r "unlink('composer-setup.php');"
 RUN mv composer.phar /usr/local/bin/composer
 
+RUN curl -sS https://getcomposer.org/installer -o composer-setup.php
+RUN /usr/bin/php8 composer-setup.php --install-dir=/usr/local/bin --filename=composer
+RUN rm -rf composer-setup.php
+
 USER container
 ENV  USER container
 ENV HOME /home/container
 
 WORKDIR /home/container
-
 COPY ./entrypoint.sh /entrypoint.sh
 
 CMD ["/bin/ash", "/entrypoint.sh"]
